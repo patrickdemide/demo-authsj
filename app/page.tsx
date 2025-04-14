@@ -1,9 +1,11 @@
-import SignIn from "@/components/sign-in";
+import prisma from "@/lib/prisma";
 
-export default function Home() {
+export default async function Home() {
+  const posts = await prisma.user.findMany();
   return (
     <div>
-      <SignIn />
+      <div>Users</div>
+      <div>{JSON.stringify(posts)}</div>
     </div>
   );
 }

@@ -1,3 +1,4 @@
+import SignIn from "@/components/sign-in";
 import prisma from "@/lib/prisma";
 
 export const revalidate = 60;
@@ -8,6 +9,7 @@ export default async function Home() {
     <div>
       <div>Users</div>
       <div>{JSON.stringify(posts)}</div>
+      <SignIn />
     </div>
   );
 }
